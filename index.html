@@ -1,0 +1,137 @@
+<!-- FIXED index.html with working YouTube video embed -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Portfolio — Jabez Rom</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+<canvas id="bgCanvas"></canvas>
+
+<header class="site-header fade-in">
+<div class="container header-inner">
+<div class="brand">
+<a href="#home">MyPortfolio</a>
+</div>
+
+<nav class="nav">
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#projects">Projects</a>
+<a href="#blog">Blog</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<div class="controls">
+<button id="themeToggle" title="Toggle Theme">🌙</button>
+<a id="resumeBtn" class="btn small" href="resume.pdf" download>Download Resume</a>
+</div>
+</div>
+</header>
+
+<main class="container main-grid fade-in">
+<!-- Sidebar -->
+<aside class="sidebar slide-in-left">
+<img src="https://www.facebook.com/photo?fbid=1165482052154338&set=a.100991178603436" alt="profile" class="profile" />
+<h2 class="name">Dagaang, Jabez Rom</h2>
+<p class="role">Information Technology Student • Developer</p>
+
+<div class="socials">
+<a href="https://github.com/Student-2501102355" target="_blank" rel="noreferrer">GitHub</a>
+<a href="https://www.facebook.com/dagaang.jabezrom" target="_blank" rel="noreferrer">Facebook</a>
+</div>
+
+<div class="sidebar-card">
+<h3>Contact</h3>
+<p><a href="mailto:2501102355@student.buksu.edu.ph">2501102355@student.buksu.edu.ph</a></p>
+<p>Philippines</p>
+</div>
+
+<div class="sidebar-card">
+<h3>Skills</h3>
+<ul class="skills">
+<li>HTML / CSS / JS</li>
+<li>React</li>
+<li>Python Automation</li>
+<li>Networking</li>
+</ul>
+</div>
+</aside>
+
+<!-- Main content -->
+<section class="content slide-in-right" id="mainContent">
+<section id="home" class="hero">
+<h1>Hi — I'm <span class="accent">Dagaang, Jabez Rom</span></h1>
+<p class="lead">A passionate IT student specializing in Web Development, Networking, and Cybersecurity.</p>
+
+<div class="cta">
+<a class="btn" href="#projects">View Projects</a>
+<a class="btn ghost" href="#contact">Contact Me</a>
+</div>
+</section>
+
+<section id="about" class="card fade-in">
+<h2>About Me</h2>
+<p>I love creating practical solutions using modern technologies. My focus is on building efficient web applications, automations, and understanding complex system infrastructures.</p>
+</section>
+
+<section id="projects" class="card fade-in">
+<h2>Projects</h2>
+<p class="muted small">Here are my featured GitHub projects:</p>
+<div class="projects-grid" id="projectGrid"></div>
+</section>
+
+<!-- FIXED VIDEO SECTION -->
+<section id="video" class="card fade-in">
+<h2>Featured Video</h2>
+<p class="muted small">A helpful beginner-friendly introduction to HTML.</p>
+
+<div class="video-wrapper">
+<iframe
+src="https://www.youtube.com/embed/DgRngrWG59o"
+title="HTML Tutorial for Beginners (5 minutes)"
+frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+referrerpolicy="strict-origin-when-cross-origin"
+allowfullscreen>
+</iframe>
+</div>
+</section>
+
+<section id="blog" class="card fade-in">
+<h2>Blog</h2>
+<div class="blog-grid" id="blogGrid"></div>
+</section>
+
+<section id="blogView" class="card hidden fade-in">
+<button class="btn small" id="blogBack">⬅ Back</button>
+<h2 id="blogTitle"></h2>
+<p id="blogBody"></p>
+</section>
+
+<section id="contact" class="card fade-in">
+<h2>Contact Me</h2>
+<form id="contactForm" class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+<label>Name<input type="text" name="name" required></label>
+<label>Email<input type="email" name="email" required></label>
+<label>Message<textarea name="message" rows="6" required></textarea></label>
+
+<div class="form-actions">
+<button type="submit" class="btn">Send</button>
+<button type="button" id="openEmail" class="btn ghost">Open Email</button>
+</div>
+</form>
+</section>
+</section>
+</main>
+
+<footer class="footer fade-in">
+© <span id="year"></span> Dagaang, Jabez Rom — All Rights Reserved
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

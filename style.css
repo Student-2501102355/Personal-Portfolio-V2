@@ -1,0 +1,164 @@
+:root{
+  /* DARK theme variables (default) */
+  --bg: #0a0f1a;
+  --panel: #0f1c2e;
+  --muted: #c3d4ff;
+  --text: #e8f6ff;
+  --accent: #4fc3f7;
+  --accent2: #82b1ff;
+  --glass: rgba(255,255,255,0.04);
+}
+
+/* LIGHT theme variables -- applied when .light-theme on <html> */
+/* ==== NEW IT CYBER LIGHT THEME ==== */
+html.light-theme {
+  --bg: #e9f0f8;               /* soft tech gray-blue */
+  --panel: #f4f9ff;            /* glass-like white-blue */
+  --muted: #3b4a65;            /* sleek bluish-gray text */
+  --text: #0a1a28;             /* deep navy tech text */
+  --accent: #00c8ff;           /* neon cyan (tech glow) */
+  --accent2: #5fd3ff;          /* secondary neon cyan */
+  --glass: rgba(0, 80, 120, 0.06); /* light bluish glass layer */
+  
+  /* Optional lighting changes */
+  --shadow: rgba(0, 90, 130, 0.15);
+  --border-soft: rgba(0, 120, 180, 0.1);
+}
+
+html.light-theme .site-header {
+  background: linear-gradient(180deg,
+    rgba(200,230,255,0.75),
+    rgba(200,230,255,0.25)
+  );
+  border-bottom: 1px solid var(--border-soft);
+}
+
+html.light-theme .btn.ghost {
+  border: 1px solid rgba(0, 140, 200, 0.25);
+  color: var(--text);
+}
+
+html.light-theme .card,
+html.light-theme .sidebar {
+  background: rgba(255,255,255,0.65);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-soft);
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+html.light-theme #bgCanvas {
+  opacity: 0.07; /* softer to match light mode */
+}
+
+
+/* base */
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial}
+body{
+  background:var(--bg);
+  color:var(--muted);
+  -webkit-font-smoothing:antialiased;
+  transition: background-color .35s ease, color .35s ease;
+}
+
+/* container */
+.container{max-width:1100px;margin:0 auto;padding:22px}
+
+/* canvas */
+#bgCanvas{position:fixed;left:0;top:0;width:100%;height:100%;z-index:0;opacity:0.12;transition:opacity .35s ease}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:20;background:linear-gradient(180deg, rgba(2,6,23,0.6), rgba(2,6,23,0.2));backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,0.03);transition:background-color .35s ease}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.brand a{color:var(--accent);font-weight:700;text-decoration:none}
+.nav a{margin-left:18px;color:var(--muted);text-decoration:none}
+.controls{display:flex;gap:10px;align-items:center}
+
+/* buttons */
+.btn{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#041017;padding:10px 14px;border-radius:12px;border:none;font-weight:600;cursor:pointer;text-decoration:none}
+.btn.small{padding:8px 10px;font-size:14px}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)}
+
+/* layout */
+.main-grid{display:grid;grid-template-columns:300px 1fr;gap:28px;align-items:start;padding-top:18px;z-index:1}
+.sidebar{background:linear-gradient(180deg,var(--panel), rgba(255,255,255,0.02));padding:18px;border-radius:14px;border:1px solid rgba(255,255,255,0.03);position:relative}
+.profile{width:100%;border-radius:12px;display:block;margin-bottom:12px}
+.name{color:var(--text);margin:6px 0}
+.role{color:var(--muted);margin:0 0 12px}
+.socials a{display:inline-block;margin-right:10px;color:var(--accent)}
+.sidebar-card{background:var(--glass);padding:12px;border-radius:12px;margin-top:12px}
+.skills{padding-left:16px;margin:0}
+
+/* content cards */
+.content .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:14px;border:1px solid rgba(255,255,255,0.03);margin-bottom:18px}
+.hero{padding:30px 8px}
+.hero .accent{color:var(--accent);font-weight:700}
+.lead{color:var(--muted)}
+.cta{margin-top:14px}
+
+/* grids */
+.projects-grid, .blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:12px}
+.project-card, .blog-card{background:rgba(255,255,255,0.02);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.04);transition:transform .18s,box-shadow .18s,opacity .25s}
+.project-card:hover, .blog-card:hover{transform:translateY(-6px);box-shadow:0 10px 30px rgba(0,0,0,0.45),0 0 20px var(--accent)}
+.muted{color:var(--muted)}
+.small{font-size:13px}
+
+/* project thumb */
+.project-thumb{width:100%;height:150px;object-fit:cover;border-radius:10px;margin-bottom:10px}
+
+/* contact */
+.contact-form label{display:block;margin-bottom:8px}
+.contact-form input,.contact-form textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--muted)}
+.form-actions{display:flex;gap:8px;margin-top:8px}
+
+/* footer */
+.footer{padding:24px 0;color:var(--muted);text-align:center}
+.hidden{display:none}
+
+/* TRANSITIONS / PAGE ANIMATIONS */
+.fade-in{animation:fadeIn .6s ease both}
+.slide-in-left{animation:slideLeft .6s ease both}
+.slide-in-right{animation:slideRight .6s ease both}
+
+@keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes slideLeft{from{opacity:0;transform:translateX(-18px)}to{opacity:1;transform:none}}
+@keyframes slideRight{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
+
+/* CONTENT FADE used during internal navigation */
+#mainContent {
+  transition: opacity .35s ease, transform .35s ease;
+  will-change: opacity, transform;
+}
+#mainContent.is-transitioning {
+  opacity: 0;
+  transform: translateY(8px) scale(0.997);
+}
+
+/* light-theme specific small tweaks */
+html.light-theme .site-header{background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.2))}
+html.light-theme .btn.ghost{border:1px solid rgba(10,20,40,0.06)}
+
+/* responsive */
+@media (max-width:960px){
+  .main-grid{grid-template-columns:1fr}
+  .sidebar{position:relative;order:2}
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--glass);
+  margin-top: 15px;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border: none;
+}
